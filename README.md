@@ -38,6 +38,18 @@ success
 {response : 123456}
 ```
 
+### Implemented features
+- Math operators (`+`, `-`, `*`, `/`, `%`)
+- Logical operators (`&&`, `||`)
+- Comparison operators (`==`, `!=`, `<`, `<=`, `>`, `>=`)
+- Expressions with brackets and operators priority
+- `if`(-`else`) conditional operator
+- `while` loop
+- Dynamic typing with 5 variable types: `int`, `string`, `bool`, `pair` and `list` (+ casting)
+- Chained function calls
+- VK API calls with arbitrary arguments
+
+
 ### Version
 1.0.0
 
