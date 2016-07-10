@@ -17,7 +17,7 @@ while (i > 0) {
 fact = fact * i
 i = i - 1
 }
-print({ fact })";
+print(fact)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -30,13 +30,13 @@ print({ fact })";
             var script = @"i = 10
 a = 1
 b = 1
-print({ a })
-print({ b })
+print(a)
+print(b)
 while (i > 0) {
 c = a+b
 a = b
 b = c
-print({ c })
+print(c)
 i = i - 1
 }";
             var tw = new StringWriter();
@@ -53,11 +53,11 @@ i = i - 1
 b = {}
 i = 0
 while (i < 10) {
-t = a.at({ pos:i })
-b = b.append({ t*t })
+t = a.at(pos:i)
+b = b.append(t*t)
 i = i + 1
 }
-print({b})";
+print(b)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);

@@ -12,7 +12,7 @@ namespace VKScriptTest
         public void TestListFirst()
         {
             var script = @"a = { item1 : {a:1, b:2}, item2 : { c:3, d:4} }
-print({ a.first() })";
+print(a.first())";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -23,7 +23,7 @@ print({ a.first() })";
         public void TestListLast()
         {
             var script = @"a = { item1 : {a:1, b:2}, item2 : { c:3, d:4} }
-print({ a.last() })";
+print(a.last())";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -34,7 +34,7 @@ print({ a.last() })";
         public void TestListAt()
         {
             var script = @"list = { 1, 2, 3, ""a"", ""b"", ""c"" }
-print({ list.at({ pos:2 }) })";
+print(list.at(pos:2))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -45,7 +45,7 @@ print({ list.at({ pos:2 }) })";
         public void TestListTakeCount()
         {
             var script = @"list = { 1, 2, 3, ""a"", ""b"", ""c"" }
-print({ list.take({ count:2 }) })";
+print(list.take(count:2))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -56,7 +56,7 @@ print({ list.take({ count:2 }) })";
         public void TestListTakeCountFrom()
         {
             var script = @"list = { 1, 2, 3, ""a"", ""b"", ""c"" }
-print({ list.take({ count:3, from: 2 }) })";
+print(list.take(count:3, from: 2))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -67,8 +67,8 @@ print({ list.take({ count:3, from: 2 }) })";
         public void TestListAppend()
         {
             var script = @"list = { 1, 2, 3, ""a"", ""b"", ""c"" }
-list2 = list.append({ ""text"", 123, ""text"" })
-print({ list2 })";
+list2 = list.append(""text"", 123, ""text"")
+print(list2)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -79,8 +79,8 @@ print({ list2 })";
         public void TestListRemove()
         {
             var script = @"list = { 1, 2, 3, ""a"", ""b"", ""c"" }
-list2 = list.remove({ pos: 3 })
-print({ list2 })";
+list2 = list.remove(pos: 3)
+print(list2)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -91,7 +91,7 @@ print({ list2 })";
         public void TestListByKey()
         {
             var script = @"list = { a:1, b:2, c:3, d:4, e:5 }
-print({ list.byKey({ ""c"" }) })";
+print(list.byKey(""c""))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);

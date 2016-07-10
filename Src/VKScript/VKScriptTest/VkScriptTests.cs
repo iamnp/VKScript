@@ -11,7 +11,7 @@ namespace VKScriptTest
         [TestMethod]
         public void TestPrintInt()
         {
-            var script = @"print({123})";
+            var script = @"print(123)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -21,7 +21,7 @@ namespace VKScriptTest
         [TestMethod]
         public void TestPrintString()
         {
-            var script = @"print({""word w""})";
+            var script = @"print(""word w"")";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -31,7 +31,7 @@ namespace VKScriptTest
         [TestMethod]
         public void TestPrintPair()
         {
-            var script = @"print({ test : 25 })";
+            var script = @"print(test: 25)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -41,7 +41,7 @@ namespace VKScriptTest
         [TestMethod]
         public void TestSimpleMath()
         {
-            var script = @"print({ (((24+3)-(17+4))+8) })";
+            var script = @"print((((24+3)-(17+4))+8))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -51,7 +51,7 @@ namespace VKScriptTest
         [TestMethod]
         public void TestComplexMath()
         {
-            var script = @"print({ ((1 + (((((24+3)-(17+4))+8) / 2) * 47)) / 11 + 1 - 8) })";
+            var script = @"print(((1 + (((((24+3)-(17+4))+8) / 2) * 47)) / 11 + 1 - 8))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -61,7 +61,7 @@ namespace VKScriptTest
         [TestMethod]
         public void TestExpressionsEvaluatedInOrder()
         {
-            var script = @"print({ (1 + 2 * 3 - 5 * 7) })";
+            var script = @"print((1 + 2 * 3 - 5 * 7))";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -74,7 +74,7 @@ namespace VKScriptTest
             var script = @"a = 21
 b = ""string""
 c = a + b
-print({c})";
+print(c)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -85,9 +85,9 @@ print({c})";
         public void TestStringToIntCast()
         {
             var script = @"a = ""21""
-b = int({a})
+b = int(a)
 c = b + 1
-print({c})";
+print(c)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -98,7 +98,7 @@ print({c})";
         public void TestSimpleBool()
         {
             var script = @"a = 5 > 2
-print({ a })";
+print(a)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -109,7 +109,7 @@ print({ a })";
         public void TestComplexBool()
         {
             var script = @"a = (5 > 2) && ((21*3) < 50)
-print({ a })";
+print(a)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -119,7 +119,7 @@ print({ a })";
         [TestMethod]
         public void TestSimpleIf()
         {
-            var script = @"if (5 > 2) { print({ ""true"" }) } else { print({ ""false"" }) }";
+            var script = @"if (5 > 2) { print(""true"") } else { print(""false"") }";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -132,17 +132,17 @@ print({ a })";
             var script = @"if (5 < 2) {
 
 if (2 > 3) {
-        print({1})
+        print(1)
 } else {
-        print({2})
+        print(2)
 }
 
 } else {
 
 if (7 < 4) {
-        print({3})
+        print(3)
 } else {
-        print({4})
+        print(4)
 }
 
 }";
@@ -158,10 +158,10 @@ if (7 < 4) {
             var script = @"i = 0
 while (i < 5) {
 
-print({ i })
+print(i)
 i = i + 1
 }
-print({ i })";
+print(i)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -174,11 +174,11 @@ print({ i })";
             var script = @"i = 0
 while (i < 10) {
 if (i % 2 == 1) {
-print({ i })
+print(i)
 }
 i = i + 1
 }
-print({ i })";
+print(i)";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);
@@ -191,7 +191,7 @@ print({ i })";
             var script = @"a = 1
 b = a
 a = 2
-print({ {a, b} })";
+print({a, b})";
             var tw = new StringWriter();
             Console.SetOut(tw);
             VkScript.RunVkScript(script);

@@ -49,10 +49,16 @@ namespace VKScript.VkScript
             return new Value(new Tuple<string, Value>(context.ID().GetText(), Visit(context.expr())));
         }
 
-        public override Value VisitList(VKScriptParser.ListContext context)
+        public override Value VisitList_content(VKScriptParser.List_contentContext context)
         {
             var list = context.expr().Select(Visit).ToList();
             return new Value(list);
+        }
+
+        public override Value VisitList(VKScriptParser.ListContext context)
+        {
+            if (context.list_content() == null) return new Value(new List<Value>());
+            return Visit(context.list_content());
         }
 
         public override Value VisitOutput(VKScriptParser.OutputContext context)
@@ -66,7 +72,7 @@ namespace VKScript.VkScript
 
         public override Value VisitExprMethodCall(VKScriptParser.ExprMethodCallContext context)
         {
-            var args = context.list() == null ? new List<Value>() : Visit(context.list()).AsList;
+            var args = context.list_content() == null ? new List<Value>() : Visit(context.list_content()).AsList;
             var methodName = context.ID().GetText();
             var calledOn = Visit(context.expr());
             return FunctionsExecutor.Exec(calledOn, methodName, args);
@@ -74,7 +80,7 @@ namespace VKScript.VkScript
 
         public override Value VisitExprFuncCall(VKScriptParser.ExprFuncCallContext context)
         {
-            var args = context.list() == null ? new List<Value>() : Visit(context.list()).AsList;
+            var args = context.list_content() == null ? new List<Value>() : Visit(context.list_content()).AsList;
             var methodName = context.ID().GetText();
             return FunctionsExecutor.Exec(null, methodName, args);
         }

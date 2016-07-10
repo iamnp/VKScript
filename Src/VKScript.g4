@@ -10,11 +10,12 @@ grammar VKScript;
 vk_script : (statement | NEWLINE)*;
 
 literal : primitive | list | pair;
-list : LCBRACKET (expr (COMMA expr)*)? RCBRACKET;
+list : LCBRACKET list_content? RCBRACKET;
+list_content : expr (COMMA expr)*;
 pair : ID COLON expr;
 expr :
-  expr DOT ID LBRACKET list? RBRACKET #exprMethodCall
-| ID LBRACKET list? RBRACKET #exprFuncCall
+  expr DOT ID LBRACKET list_content? RBRACKET #exprMethodCall
+| ID LBRACKET list_content? RBRACKET #exprFuncCall
 | pair #exprPair | ID #exprId | literal #exprLiteral
 | expr MOD expr #exprOperatorMod
 | expr MUL expr #exprOperatorMul

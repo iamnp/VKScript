@@ -50,6 +50,12 @@ public interface IVKScriptVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitList([NotNull] VKScriptParser.ListContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="VKScriptParser.list_content"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitList_content([NotNull] VKScriptParser.List_contentContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="VKScriptParser.pair"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

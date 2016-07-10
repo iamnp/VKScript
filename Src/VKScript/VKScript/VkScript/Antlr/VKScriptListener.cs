@@ -61,6 +61,16 @@ public interface IVKScriptListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitList([NotNull] VKScriptParser.ListContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="VKScriptParser.list_content"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterList_content([NotNull] VKScriptParser.List_contentContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VKScriptParser.list_content"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitList_content([NotNull] VKScriptParser.List_contentContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="VKScriptParser.pair"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

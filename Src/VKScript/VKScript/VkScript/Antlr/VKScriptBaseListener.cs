@@ -71,6 +71,18 @@ public partial class VKScriptBaseListener : IVKScriptListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitList([NotNull] VKScriptParser.ListContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="VKScriptParser.list_content"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterList_content([NotNull] VKScriptParser.List_contentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VKScriptParser.list_content"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitList_content([NotNull] VKScriptParser.List_contentContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="VKScriptParser.pair"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
