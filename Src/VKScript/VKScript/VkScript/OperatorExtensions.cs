@@ -86,7 +86,7 @@ namespace VKScript.VkScript
             return null;
         }
 
-        public static Value Eval(this VKScriptParser.ExprOperatorLargerThenContext op, Value aa, Value bb)
+        public static Value Eval(this VKScriptParser.ExprOperatorGreaterThenContext op, Value aa, Value bb)
         {
             var a = aa.Copy();
             var b = bb.Copy();
@@ -96,7 +96,7 @@ namespace VKScript.VkScript
             return null;
         }
 
-        public static Value Eval(this VKScriptParser.ExprOperatorLargerEqThenContext op, Value aa, Value bb)
+        public static Value Eval(this VKScriptParser.ExprOperatorGreaterEqThenContext op, Value aa, Value bb)
         {
             var a = aa.Copy();
             var b = bb.Copy();

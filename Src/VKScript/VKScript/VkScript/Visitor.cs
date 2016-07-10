@@ -165,12 +165,12 @@ namespace VKScript.VkScript
             return context.Eval(Visit(context.expr(0)), Visit(context.expr(1)));
         }
 
-        public override Value VisitExprOperatorLargerThen(VKScriptParser.ExprOperatorLargerThenContext context)
+        public override Value VisitExprOperatorGreaterThen(VKScriptParser.ExprOperatorGreaterThenContext context)
         {
             return context.Eval(Visit(context.expr(0)), Visit(context.expr(1)));
         }
 
-        public override Value VisitExprOperatorLargerEqThen(VKScriptParser.ExprOperatorLargerEqThenContext context)
+        public override Value VisitExprOperatorGreaterEqThen(VKScriptParser.ExprOperatorGreaterEqThenContext context)
         {
             return context.Eval(Visit(context.expr(0)), Visit(context.expr(1)));
         }

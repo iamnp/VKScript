@@ -111,20 +111,6 @@ public partial class VKScriptBaseListener : IVKScriptListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitPair([NotNull] VKScriptParser.PairContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by the <c>exprOperatorLargerThen</c>
-	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExprOperatorLargerThen([NotNull] VKScriptParser.ExprOperatorLargerThenContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>exprOperatorLargerThen</c>
-	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExprOperatorLargerThen([NotNull] VKScriptParser.ExprOperatorLargerThenContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by the <c>exprPair</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -153,19 +139,19 @@ public partial class VKScriptBaseListener : IVKScriptListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExprBrackets([NotNull] VKScriptParser.ExprBracketsContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by the <c>exprOperatorLargerEqThen</c>
+	/// Enter a parse tree produced by the <c>exprOperatorGreaterThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExprOperatorLargerEqThen([NotNull] VKScriptParser.ExprOperatorLargerEqThenContext context) { }
+	public virtual void EnterExprOperatorGreaterThen([NotNull] VKScriptParser.ExprOperatorGreaterThenContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by the <c>exprOperatorLargerEqThen</c>
+	/// Exit a parse tree produced by the <c>exprOperatorGreaterThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExprOperatorLargerEqThen([NotNull] VKScriptParser.ExprOperatorLargerEqThenContext context) { }
+	public virtual void ExitExprOperatorGreaterThen([NotNull] VKScriptParser.ExprOperatorGreaterThenContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>exprOperatorPlus</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
@@ -362,6 +348,20 @@ public partial class VKScriptBaseListener : IVKScriptListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExprOperatorMul([NotNull] VKScriptParser.ExprOperatorMulContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by the <c>exprOperatorGreaterEqThen</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExprOperatorGreaterEqThen([NotNull] VKScriptParser.ExprOperatorGreaterEqThenContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>exprOperatorGreaterEqThen</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExprOperatorGreaterEqThen([NotNull] VKScriptParser.ExprOperatorGreaterEqThenContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="VKScriptParser.primitive"/>.
 	/// <para>The default implementation does nothing.</para>

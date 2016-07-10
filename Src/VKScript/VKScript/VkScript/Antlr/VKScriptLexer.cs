@@ -32,7 +32,7 @@ public partial class VKScriptLexer : Lexer {
 	public const int
 		INT=1, STRING=2, BOOL=3, COLON=4, DOT=5, COMMA=6, ASSIGN=7, EQ=8, NOTEQ=9, 
 		AND=10, OR=11, PLUS=12, MINUS=13, MUL=14, DIV=15, MOD=16, LESS_THAN=17, 
-		LESS_EQ_THAN=18, LARGER_THAN=19, LARGER_EQ_THAN=20, LBRACKET=21, RBRACKET=22, 
+		LESS_EQ_THAN=18, GREATER_THAN=19, GREATER_EQ_THAN=20, LBRACKET=21, RBRACKET=22, 
 		LCBRACKET=23, RCBRACKET=24, IF=25, ELSE=26, WHILE=27, COMMENT=28, NEWLINE=29, 
 		WS=30, ID=31;
 	public static string[] modeNames = {
@@ -42,7 +42,7 @@ public partial class VKScriptLexer : Lexer {
 	public static readonly string[] ruleNames = {
 		"INT", "STRING", "BOOL", "COLON", "DOT", "COMMA", "ASSIGN", "EQ", "NOTEQ", 
 		"AND", "OR", "PLUS", "MINUS", "MUL", "DIV", "MOD", "LESS_THAN", "LESS_EQ_THAN", 
-		"LARGER_THAN", "LARGER_EQ_THAN", "LBRACKET", "RBRACKET", "LCBRACKET", 
+		"GREATER_THAN", "GREATER_EQ_THAN", "LBRACKET", "RBRACKET", "LCBRACKET", 
 		"RCBRACKET", "IF", "ELSE", "WHILE", "COMMENT", "NEWLINE", "WS", "ID"
 	};
 
@@ -61,7 +61,7 @@ public partial class VKScriptLexer : Lexer {
 	private static readonly string[] _SymbolicNames = {
 		null, "INT", "STRING", "BOOL", "COLON", "DOT", "COMMA", "ASSIGN", "EQ", 
 		"NOTEQ", "AND", "OR", "PLUS", "MINUS", "MUL", "DIV", "MOD", "LESS_THAN", 
-		"LESS_EQ_THAN", "LARGER_THAN", "LARGER_EQ_THAN", "LBRACKET", "RBRACKET", 
+		"LESS_EQ_THAN", "GREATER_THAN", "GREATER_EQ_THAN", "LBRACKET", "RBRACKET", 
 		"LCBRACKET", "RCBRACKET", "IF", "ELSE", "WHILE", "COMMENT", "NEWLINE", 
 		"WS", "ID"
 	};

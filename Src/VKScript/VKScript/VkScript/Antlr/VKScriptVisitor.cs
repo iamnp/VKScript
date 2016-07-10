@@ -70,13 +70,6 @@ public interface IVKScriptVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitPair([NotNull] VKScriptParser.PairContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>exprOperatorLargerThen</c>
-	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitExprOperatorLargerThen([NotNull] VKScriptParser.ExprOperatorLargerThenContext context);
-	/// <summary>
 	/// Visit a parse tree produced by the <c>exprPair</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// </summary>
@@ -91,12 +84,12 @@ public interface IVKScriptVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitExprBrackets([NotNull] VKScriptParser.ExprBracketsContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>exprOperatorLargerEqThen</c>
+	/// Visit a parse tree produced by the <c>exprOperatorGreaterThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitExprOperatorLargerEqThen([NotNull] VKScriptParser.ExprOperatorLargerEqThenContext context);
+	Result VisitExprOperatorGreaterThen([NotNull] VKScriptParser.ExprOperatorGreaterThenContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>exprOperatorPlus</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
@@ -195,6 +188,13 @@ public interface IVKScriptVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitExprOperatorMul([NotNull] VKScriptParser.ExprOperatorMulContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>exprOperatorGreaterEqThen</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExprOperatorGreaterEqThen([NotNull] VKScriptParser.ExprOperatorGreaterEqThenContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="VKScriptParser.primitive"/>.
 	/// </summary>

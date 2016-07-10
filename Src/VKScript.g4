@@ -23,8 +23,8 @@ expr : pair #exprPair | function_call #exprFuncCall | ID #exprId | literal #expr
 | expr NOTEQ expr #exprOperatorNotEq
 | expr LESS_THAN expr #exprOperatorLessThen
 | expr LESS_EQ_THAN expr #exprOperatorLessEqThen
-| expr LARGER_THAN expr #exprOperatorLargerThen
-| expr LARGER_EQ_THAN expr #exprOperatorLargerEqThen
+| expr GREATER_THAN expr #exprOperatorGreaterThen
+| expr GREATER_EQ_THAN expr #exprOperatorGreaterEqThen
 | expr AND expr #exprOperatorAnd
 | expr OR expr #exprOperatorOr
 | LBRACKET expr RBRACKET #exprBrackets;
@@ -62,8 +62,8 @@ MOD : '%';
 
 LESS_THAN : '<';
 LESS_EQ_THAN : '<=';
-LARGER_THAN : '>';
-LARGER_EQ_THAN : '>=';
+GREATER_THAN : '>';
+GREATER_EQ_THAN : '>=';
 
 LBRACKET : '(';
 RBRACKET : ')';

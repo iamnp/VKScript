@@ -96,17 +96,6 @@ public partial class VKScriptBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <return>The visitor result.</return>
 	public virtual Result VisitPair([NotNull] VKScriptParser.PairContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by the <c>exprOperatorLargerThen</c>
-	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitExprOperatorLargerThen([NotNull] VKScriptParser.ExprOperatorLargerThenContext context) { return VisitChildren(context); }
-	/// <summary>
 	/// Visit a parse tree produced by the <c>exprPair</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// <para>
@@ -129,7 +118,7 @@ public partial class VKScriptBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <return>The visitor result.</return>
 	public virtual Result VisitExprBrackets([NotNull] VKScriptParser.ExprBracketsContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by the <c>exprOperatorLargerEqThen</c>
+	/// Visit a parse tree produced by the <c>exprOperatorGreaterThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
@@ -138,7 +127,7 @@ public partial class VKScriptBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitExprOperatorLargerEqThen([NotNull] VKScriptParser.ExprOperatorLargerEqThenContext context) { return VisitChildren(context); }
+	public virtual Result VisitExprOperatorGreaterThen([NotNull] VKScriptParser.ExprOperatorGreaterThenContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>exprOperatorPlus</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
@@ -293,6 +282,17 @@ public partial class VKScriptBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitExprOperatorMul([NotNull] VKScriptParser.ExprOperatorMulContext context) { return VisitChildren(context); }
+	/// <summary>
+	/// Visit a parse tree produced by the <c>exprOperatorGreaterEqThen</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitExprOperatorGreaterEqThen([NotNull] VKScriptParser.ExprOperatorGreaterEqThenContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="VKScriptParser.primitive"/>.
 	/// <para>

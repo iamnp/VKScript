@@ -35,7 +35,7 @@ public partial class VKScriptParser : Parser {
 	public const int
 		INT=1, STRING=2, BOOL=3, COLON=4, DOT=5, COMMA=6, ASSIGN=7, EQ=8, NOTEQ=9, 
 		AND=10, OR=11, PLUS=12, MINUS=13, MUL=14, DIV=15, MOD=16, LESS_THAN=17, 
-		LESS_EQ_THAN=18, LARGER_THAN=19, LARGER_EQ_THAN=20, LBRACKET=21, RBRACKET=22, 
+		LESS_EQ_THAN=18, GREATER_THAN=19, GREATER_EQ_THAN=20, LBRACKET=21, RBRACKET=22, 
 		LCBRACKET=23, RCBRACKET=24, IF=25, ELSE=26, WHILE=27, COMMENT=28, NEWLINE=29, 
 		WS=30, ID=31;
 	public const int
@@ -55,7 +55,7 @@ public partial class VKScriptParser : Parser {
 	private static readonly string[] _SymbolicNames = {
 		null, "INT", "STRING", "BOOL", "COLON", "DOT", "COMMA", "ASSIGN", "EQ", 
 		"NOTEQ", "AND", "OR", "PLUS", "MINUS", "MUL", "DIV", "MOD", "LESS_THAN", 
-		"LESS_EQ_THAN", "LARGER_THAN", "LARGER_EQ_THAN", "LBRACKET", "RBRACKET", 
+		"LESS_EQ_THAN", "GREATER_THAN", "GREATER_EQ_THAN", "LBRACKET", "RBRACKET", 
 		"LCBRACKET", "RCBRACKET", "IF", "ELSE", "WHILE", "COMMENT", "NEWLINE", 
 		"WS", "ID"
 	};
@@ -537,29 +537,6 @@ public partial class VKScriptParser : Parser {
 			base.CopyFrom(context);
 		}
 	}
-	public partial class ExprOperatorLargerThenContext : ExprContext {
-		public ExprContext[] expr() {
-			return GetRuleContexts<ExprContext>();
-		}
-		public ExprContext expr(int i) {
-			return GetRuleContext<ExprContext>(i);
-		}
-		public ITerminalNode LARGER_THAN() { return GetToken(VKScriptParser.LARGER_THAN, 0); }
-		public ExprOperatorLargerThenContext(ExprContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			IVKScriptListener typedListener = listener as IVKScriptListener;
-			if (typedListener != null) typedListener.EnterExprOperatorLargerThen(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IVKScriptListener typedListener = listener as IVKScriptListener;
-			if (typedListener != null) typedListener.ExitExprOperatorLargerThen(this);
-		}
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IVKScriptVisitor<TResult> typedVisitor = visitor as IVKScriptVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitExprOperatorLargerThen(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
 	public partial class ExprPairContext : ExprContext {
 		public PairContext pair() {
 			return GetRuleContext<PairContext>(0);
@@ -600,26 +577,26 @@ public partial class VKScriptParser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
-	public partial class ExprOperatorLargerEqThenContext : ExprContext {
+	public partial class ExprOperatorGreaterThenContext : ExprContext {
 		public ExprContext[] expr() {
 			return GetRuleContexts<ExprContext>();
 		}
 		public ExprContext expr(int i) {
 			return GetRuleContext<ExprContext>(i);
 		}
-		public ITerminalNode LARGER_EQ_THAN() { return GetToken(VKScriptParser.LARGER_EQ_THAN, 0); }
-		public ExprOperatorLargerEqThenContext(ExprContext context) { CopyFrom(context); }
+		public ITerminalNode GREATER_THAN() { return GetToken(VKScriptParser.GREATER_THAN, 0); }
+		public ExprOperatorGreaterThenContext(ExprContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IVKScriptListener typedListener = listener as IVKScriptListener;
-			if (typedListener != null) typedListener.EnterExprOperatorLargerEqThen(this);
+			if (typedListener != null) typedListener.EnterExprOperatorGreaterThen(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IVKScriptListener typedListener = listener as IVKScriptListener;
-			if (typedListener != null) typedListener.ExitExprOperatorLargerEqThen(this);
+			if (typedListener != null) typedListener.ExitExprOperatorGreaterThen(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IVKScriptVisitor<TResult> typedVisitor = visitor as IVKScriptVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitExprOperatorLargerEqThen(this);
+			if (typedVisitor != null) return typedVisitor.VisitExprOperatorGreaterThen(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
@@ -931,6 +908,29 @@ public partial class VKScriptParser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
+	public partial class ExprOperatorGreaterEqThenContext : ExprContext {
+		public ExprContext[] expr() {
+			return GetRuleContexts<ExprContext>();
+		}
+		public ExprContext expr(int i) {
+			return GetRuleContext<ExprContext>(i);
+		}
+		public ITerminalNode GREATER_EQ_THAN() { return GetToken(VKScriptParser.GREATER_EQ_THAN, 0); }
+		public ExprOperatorGreaterEqThenContext(ExprContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IVKScriptListener typedListener = listener as IVKScriptListener;
+			if (typedListener != null) typedListener.EnterExprOperatorGreaterEqThen(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IVKScriptListener typedListener = listener as IVKScriptListener;
+			if (typedListener != null) typedListener.ExitExprOperatorGreaterEqThen(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IVKScriptVisitor<TResult> typedVisitor = visitor as IVKScriptVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExprOperatorGreaterEqThen(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
 
 	[RuleVersion(0)]
 	public ExprContext expr() {
@@ -1100,21 +1100,21 @@ public partial class VKScriptParser : Parser {
 						break;
 					case 10:
 						{
-						_localctx = new ExprOperatorLargerThenContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new ExprOperatorGreaterThenContext(new ExprContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
 						State = 114;
 						if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
-						State = 115; Match(LARGER_THAN);
+						State = 115; Match(GREATER_THAN);
 						State = 116; expr(6);
 						}
 						break;
 					case 11:
 						{
-						_localctx = new ExprOperatorLargerEqThenContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new ExprOperatorGreaterEqThenContext(new ExprContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
 						State = 117;
 						if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
-						State = 118; Match(LARGER_EQ_THAN);
+						State = 118; Match(GREATER_EQ_THAN);
 						State = 119; expr(5);
 						}
 						break;
