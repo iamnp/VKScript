@@ -38,20 +38,6 @@ public interface IVKScriptVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitVk_script([NotNull] VKScriptParser.Vk_scriptContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>oneFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitOneFunc([NotNull] VKScriptParser.OneFuncContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>chainedFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitChainedFunc([NotNull] VKScriptParser.ChainedFuncContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="VKScriptParser.literal"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -167,6 +153,13 @@ public interface IVKScriptVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitExprOperatorMod([NotNull] VKScriptParser.ExprOperatorModContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>exprMethodCall</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExprMethodCall([NotNull] VKScriptParser.ExprMethodCallContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>exprOperatorLessThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.

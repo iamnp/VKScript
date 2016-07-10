@@ -64,29 +64,19 @@ namespace VKScript.VkScript
 
         #region FUNCTIONS
 
-        public override Value VisitOneFunc(VKScriptParser.OneFuncContext context)
+        public override Value VisitExprMethodCall(VKScriptParser.ExprMethodCallContext context)
         {
-            var l = context.list() == null ? new List<Value>() : Visit(context.list()).AsList;
-            if (context.literal() != null)
-            {
-                return FunctionsExecutor.Exec(Visit(context.literal()), context.ID(0).GetText(), l);
-            }
-            if (context.ID().Length == 2)
-            {
-                return FunctionsExecutor.Exec(_memory[context.ID(0).GetText()], context.ID(1).GetText(), l);
-            }
-            if (context.ID().Length == 1)
-            {
-                return FunctionsExecutor.Exec(null, context.ID(0).GetText(), l);
-            }
-            return null;
+            var args = context.list() == null ? new List<Value>() : Visit(context.list()).AsList;
+            var methodName = context.ID().GetText();
+            var calledOn = Visit(context.expr());
+            return FunctionsExecutor.Exec(calledOn, methodName, args);
         }
 
-        public override Value VisitChainedFunc(VKScriptParser.ChainedFuncContext context)
+        public override Value VisitExprFuncCall(VKScriptParser.ExprFuncCallContext context)
         {
-            var ctx = (VKScriptParser.OneFuncContext) context.function_call(1);
-            var l = ctx.list() == null ? new List<Value>() : Visit(ctx.list()).AsList;
-            return FunctionsExecutor.Exec(Visit(context.function_call(0)), ctx.ID(0).GetText(), l);
+            var args = context.list() == null ? new List<Value>() : Visit(context.list()).AsList;
+            var methodName = context.ID().GetText();
+            return FunctionsExecutor.Exec(null, methodName, args);
         }
 
         #endregion
@@ -124,11 +114,6 @@ namespace VKScript.VkScript
         #endregion
 
         #region EXPR
-
-        public override Value VisitExprFuncCall(VKScriptParser.ExprFuncCallContext context)
-        {
-            return Visit(context.function_call());
-        }
 
         public override Value VisitExprId(VKScriptParser.ExprIdContext context)
         {

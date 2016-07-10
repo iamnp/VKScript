@@ -41,30 +41,6 @@ public interface IVKScriptListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitVk_script([NotNull] VKScriptParser.Vk_scriptContext context);
 	/// <summary>
-	/// Enter a parse tree produced by the <c>oneFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterOneFunc([NotNull] VKScriptParser.OneFuncContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>oneFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitOneFunc([NotNull] VKScriptParser.OneFuncContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>chainedFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterChainedFunc([NotNull] VKScriptParser.ChainedFuncContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>chainedFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitChainedFunc([NotNull] VKScriptParser.ChainedFuncContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="VKScriptParser.literal"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -262,6 +238,18 @@ public interface IVKScriptListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitExprOperatorMod([NotNull] VKScriptParser.ExprOperatorModContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>exprMethodCall</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExprMethodCall([NotNull] VKScriptParser.ExprMethodCallContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>exprMethodCall</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExprMethodCall([NotNull] VKScriptParser.ExprMethodCallContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>exprOperatorLessThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.

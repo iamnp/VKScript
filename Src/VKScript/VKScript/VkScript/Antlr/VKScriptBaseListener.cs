@@ -47,34 +47,6 @@ public partial class VKScriptBaseListener : IVKScriptListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitVk_script([NotNull] VKScriptParser.Vk_scriptContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by the <c>oneFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterOneFunc([NotNull] VKScriptParser.OneFuncContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>oneFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitOneFunc([NotNull] VKScriptParser.OneFuncContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by the <c>chainedFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterChainedFunc([NotNull] VKScriptParser.ChainedFuncContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>chainedFunc</c>
-	/// labeled alternative in <see cref="VKScriptParser.function_call"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitChainedFunc([NotNull] VKScriptParser.ChainedFuncContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="VKScriptParser.literal"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -306,6 +278,20 @@ public partial class VKScriptBaseListener : IVKScriptListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExprOperatorMod([NotNull] VKScriptParser.ExprOperatorModContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by the <c>exprMethodCall</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExprMethodCall([NotNull] VKScriptParser.ExprMethodCallContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>exprMethodCall</c>
+	/// labeled alternative in <see cref="VKScriptParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExprMethodCall([NotNull] VKScriptParser.ExprMethodCallContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>exprOperatorLessThen</c>
 	/// labeled alternative in <see cref="VKScriptParser.expr"/>.

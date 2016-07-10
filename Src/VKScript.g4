@@ -9,11 +9,13 @@ grammar VKScript;
 // ==================  PARSER  =======================
 vk_script : (statement | NEWLINE)*;
 
-function_call : ((ID | literal) DOT)? ID LBRACKET list? RBRACKET #oneFunc | function_call DOT function_call #chainedFunc;
 literal : primitive | list | pair;
 list : LCBRACKET (expr (COMMA expr)*)? RCBRACKET;
 pair : ID COLON expr;
-expr : pair #exprPair | function_call #exprFuncCall | ID #exprId | literal #exprLiteral
+expr :
+  expr DOT ID LBRACKET list? RBRACKET #exprMethodCall
+| ID LBRACKET list? RBRACKET #exprFuncCall
+| pair #exprPair | ID #exprId | literal #exprLiteral
 | expr MOD expr #exprOperatorMod
 | expr MUL expr #exprOperatorMul
 | expr DIV expr #exprOperatorDiv
